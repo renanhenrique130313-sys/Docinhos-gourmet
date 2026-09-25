@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doce Encanto | Docinhos Gourmet</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#fff8fb;color:#3b202b}header{background:#7b2348;color:#fff;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px;position:sticky;top:0;z-index:5}.logo{font-size:24px;font-weight:800}nav a{color:#fff;text-decoration:none;margin:0 8px;font-weight:bold}.cartbtn,.btn{border:0;border-radius:25px;padding:12px 18px;font-weight:bold;cursor:pointer}.cartbtn{background:#fff;color:#7b2348}.hero{text-align:center;padding:70px 6%;background:linear-gradient(135deg,#ffe0ec,#fff8fb)}h1{font-size:44px;color:#7b2348;margin:0 0 12px}.hero p{font-size:18px;line-height:1.5}.btn{background:#7b2348;color:#fff;text-decoration:none;display:inline-block}section{padding:50px 6%}h2{text-align:center;color:#7b2348;font-size:30px;margin:0 0 28px}.grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}.card{background:#fff;padding:22px;border-radius:18px;text-align:center;box-shadow:0 5px 18px #0001}.emoji{font-size:52px}.card h3{margin:10px 0}.price{font-size:20px;font-weight:bold;color:#7b2348;margin:14px}.card button{width:100%;padding:11px;border:0;border-radius:20px;background:#7b2348;color:#fff;font-weight:bold}.about{background:#fff0f5;text-align:center}.about p{max-width:750px;margin:auto;line-height:1.7}.contact{text-align:center}footer{background:#3b202b;color:#fff;text-align:center;padding:25px}.cart{position:fixed;right:-400px;top:0;width:min(380px,100%);height:100vh;background:#fff;z-index:20;padding:25px;box-shadow:-5px 0 20px #0003;transition:.3s;overflow:auto}.cart.open{right:0}.close{float:right;border:0;background:none;font-size:28px}.item{padding:12px 0;border-bottom:1px solid #ddd}.total{font-size:21px;font-weight:bold;margin:20px 0}@media(max-width:700px){nav{display:none}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<header><div class="logo">🍫 Doce Encanto</div><nav><a href="#produtos">Docinhos</a><a href="#kits">Kits</a><a href="#contato">Contato</a></nav><button class="cartbtn" onclick="abrir()">🛒 Carrinho (<span id="qtd">0</span>)</button></header>
+<section class="hero"><h1>Docinhos Gourmet</h1><p>Pequenos doces, grandes momentos. Feitos com carinho para sua festa ou para deixar seu dia mais gostoso.</p><a class="btn" href="#produtos">Ver nossos doces</a></section>
+<section id="produtos"><h2>🍬 Nossos Docinhos</h2><div class="grid">
+<div class="card"><div class="emoji">🍫</div><h3>Brigadeiro Gourmet</h3><p>Chocolate cremoso e granulado especial.</p><div class="price">R$ 3,50</div><button onclick="add('Brigadeiro Gourmet',3.5)">Adicionar</button></div>
+<div class="card"><div class="emoji">🥛</div><h3>Ninho com Nutella</h3><p>Massa de Ninho com recheio de Nutella.</p><div class="price">R$ 4,50</div><button onclick="add('Ninho com Nutella',4.5)">Adicionar</button></div>
+<div class="card"><div class="emoji">🍓</div><h3>Brigadeiro de Morango</h3><p>Doce de morango com cobertura deliciosa.</p><div class="price">R$ 4,00</div><button onclick="add('Brigadeiro de Morango',4)">Adicionar</button></div>
+<div class="card"><div class="emoji">🍪</div><h3>Oreo Gourmet</h3><p>Chocolate branco com pedaços de Oreo.</p><div class="price">R$ 4,00</div><button onclick="add('Oreo Gourmet',4)">Adicionar</button></div>
+<div class="card"><div class="emoji">🥥</div><h3>Beijinho Gourmet</h3><p>Coco cremoso com acabamento especial.</p><div class="price">R$ 3,50</div><button onclick="add('Beijinho Gourmet',3.5)">Adicionar</button></div>
+<div class="card"><div class="emoji">🍩</div><h3>Churros Gourmet</h3><p>Doce de leite com canela e açúcar.</p><div class="price">R$ 4,00</div><button onclick="add('Churros Gourmet',4)">Adicionar</button></div>
+</div></section>
+<section id="kits"><h2>🎁 Kits para Festas</h2><div class="grid">
+<div class="card"><h3>Kit Pequeno</h3><p>6 docinhos variados</p><div class="price">R$ 22,00</div><button onclick="add('Kit Pequeno - 6 docinhos',22)">Adicionar</button></div>
+<div class="card"><h3>Kit Festa</h3><p>12 docinhos variados</p><div class="price">R$ 42,00</div><button onclick="add('Kit Festa - 12 docinhos',42)">Adicionar</button></div>
+<div class="card"><h3>Kit Grande</h3><p>25 docinhos variados</p><div class="price">R$ 82,00</div><button onclick="add('Kit Grande - 25 docinhos',82)">Adicionar</button></div>
+</div></section>
+<section class="about"><h2>💝 Sobre nós</h2><p>A Doce Encanto nasceu para transformar momentos simples em momentos especiais. Nossos docinhos são preparados com carinho e atenção aos detalhes.</p></section>
+<section id="contato" class="contact"><h2>📱 Faça seu pedido</h2><p>Escolha seus produtos, coloque no carrinho e envie seu pedido pelo WhatsApp.</p><button class="btn" onclick="abrir()">Ver carrinho e pedir</button></section>
+<footer>© 2026 Doce Encanto — Docinhos Gourmet</footer>
+<div class="cart" id="cart"><button class="close" onclick="fechar()">×</button><h2 style="text-align:left;margin-top:30px">Seu Carrinho</h2><div id="items">Seu carrinho está vazio.</div><div class="total">Total: R$ <span id="total">0,00</span></div><button class="btn" style="width:100%" onclick="whatsapp()">📲 Pedir pelo WhatsApp</button></div>
+<script>
+let c=[];
+function add(n,p){c.push({n,p});atualizar();abrir()}
+function atualizar(){document.getElementById('qtd').textContent=c.length;document.getElementById('items').innerHTML=c.length?c.map((x,i)=>'<div class="item"><b>'+x.n+'</b><br>R$ '+x.p.toFixed(2).replace('.',',')+' <button onclick="remover('+i+')">Remover</button></div>').join(''):'Seu carrinho está vazio.';let t=c.reduce((s,x)=>s+x.p,0);document.getElementById('total').textContent=t.toFixed(2).replace('.',',')}
+function remover(i){c.splice(i,1);atualizar()}function abrir(){document.getElementById('cart').classList.add('open')}function fechar(){document.getElementById('cart').classList.remove('open')}
+function whatsapp(){if(!c.length){alert('Adicione algum produto primeiro.');return}let m='Olá! Gostaria de fazer um pedido na Doce Encanto:%0A%0A';c.forEach(x=>m+='• '+x.n+' — R$ '+x.p.toFixed(2).replace('.',',')+'%0A');let t=c.reduce((s,x)=>s+x.p,0);m+='%0A*Total: R$ '+t.toFixed(2).replace('.',',')+'*';window.open('https://wa.me/5511999999999?text='+m,'_blank')}
+atualizar();
+</script>
+</body>
+</html>
